@@ -2,6 +2,7 @@ import type { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroProps {
   name: string;
@@ -35,21 +36,15 @@ const Hero: FC<HeroProps> = ({ name }) => {
               </Link>
             </div>
           </div>
-          <div className="relative hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10 animate-pulse"></div>
-            <svg
-              className="absolute inset-0 w-full h-full text-primary/10"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              <defs>
-                <pattern id="grid" width="4" height="4" patternUnits="userSpaceOnUse">
-                  <path d="M 1 1 H 3 V 3 H 1 Z" fill="currentColor" />
-                </pattern>
-              </defs>
-              <rect width="100" height="100" fill="url(#grid)" />
-            </svg>
+          <div className="flex items-center justify-center">
+            <Image
+              src="https://picsum.photos/600/600"
+              alt="Blen Kassahun Nigatu"
+              width={400}
+              height={400}
+              className="rounded-full object-cover"
+              data-ai-hint="profile picture"
+            />
           </div>
         </div>
       </div>
