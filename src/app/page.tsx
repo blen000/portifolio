@@ -87,6 +87,11 @@ const resumeData = {
     "Passionate about learning, innovation, and problem-solving.",
     "Fluent in Amharic and Advanced in English.",
   ],
+  socials: [
+    { name: "Email", url: "mailto:blenkassahun08@gmail.com" },
+    { name: "GitHub", url: "https://github.com/blen000" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/blen-kassahun-900415318/" },
+  ]
 };
 
 export default async function Home() {
@@ -121,7 +126,7 @@ export default async function Home() {
         <Skills skills={highlightedSkills} />
         <Projects projects={resumeData.projectsData} />
         <Certifications certifications={resumeData.certifications} />
-        <Contact email={resumeData.email} phone={resumeData.phone} />
+        <Contact socials={resumeData.socials} />
       </main>
       <Footer name={resumeData.name} />
     </div>
