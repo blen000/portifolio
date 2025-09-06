@@ -33,7 +33,7 @@ const resumeData = {
     },
     {
       title: "Gedeu'ffa - Amharic Bidirectional Translator",
-      description: "A language translation project designed for efficient bidirectional translations between Amharic and other languages.",
+      description: "A language translation project designed for efficient bidirectional translations between Amharic and Gedeu'ffa.",
       repoUrl: "https://github.com/blen000",
       liveUrl: "#",
     },
