@@ -83,9 +83,9 @@ const resumeData = {
     details: "Graduated: July 2024 | GPA: 3.92",
   },
   certifications: [
+    { title: "Gold Medalist", issuer: "College of Engineering and Technology" },
     { title: "Certificate of Recognition", issuer: "Dilla University Peace Forum" },
     { title: "Professional Development Training", issuer: "Dereja Academy" },
-    { title: "Gold Medalist", issuer: "College of Engineering and Technology" },
   ],
   additionalSkills: [
     "Served as a team leader in multiple academic and project-based collaborations.",
