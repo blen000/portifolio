@@ -28,14 +28,14 @@ const resumeData = {
     {
       title: "Electricity Billing System",
       description: "A comprehensive system for managing electricity billing, developed using HTML, CSS, JavaScript, and Oracle.",
-      imageUrl: "https://picsum.photos/600/400",
-      hint: "electricity technology"
+      repoUrl: "https://github.com/blen000",
+      liveUrl: "#",
     },
     {
       title: "Gedeu'ffa - Amharic Bidirectional Translator",
       description: "A language translation project designed for efficient bidirectional translations between Amharic and other languages.",
-      imageUrl: "https://picsum.photos/600/400",
-      hint: "language translation"
+      repoUrl: "https://github.com/blen000",
+      liveUrl: "#",
     }
   ],
   workExperienceList: [
