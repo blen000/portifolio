@@ -36,6 +36,12 @@ const resumeData = {
       description: "A language translation project designed for efficient bidirectional translations between Amharic and other languages.",
       repoUrl: "https://github.com/blen000",
       liveUrl: "#",
+    },
+    {
+      title: "Smart Menu – QR Code–Based Digital Menu System",
+      description: "Designed and developed a digital menu platform for hotels and restaurants, enabling guests to access menus instantly by scanning a QR code. Built an intuitive admin panel for secure menu management and real-time updates without requiring reprinting. Used Next.js/React, Tailwind CSS, Prisma, and MySQL.",
+      repoUrl: "https://github.com/blen000",
+      liveUrl: "#",
     }
   ],
   workExperienceList: [
