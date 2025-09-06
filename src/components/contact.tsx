@@ -34,9 +34,9 @@ const Contact: FC<ContactProps> = ({ socials }) => {
                const Icon = iconMap[social.name];
                return (
                 <Link href={social.url} key={social.name} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="icon">
-                    {Icon && <Icon className="h-6 w-6" />}
-                    <span className="sr-only">{social.name}</span>
+                  <Button variant="outline">
+                    {Icon && <Icon className="h-4 w-4 mr-2" />}
+                    {social.name}
                   </Button>
                 </Link>
                )
