@@ -1,25 +1,32 @@
 "use client";
 
 import type { FC } from "react";
-import { Progress } from "@/components/ui/progress";
 import type { HighlightSkillsOutput } from "@/ai/flows/skills-highlighting";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Code, Database, Server, Star } from "lucide-react";
 
 interface SkillsProps {
   skills: HighlightSkillsOutput;
 }
 
-const proficiencyToValue = (proficiency: string) => {
-  switch (proficiency.toLowerCase()) {
-    case "advanced":
-      return 100;
-    case "intermediate":
-      return 66;
-    case "beginner":
-      return 33;
-    default:
-      return 0;
-  }
+const skillsByCategory: Record<string, string[]> = {
+    "Programming Languages": ["C++", "Java", "JavaScript", "PHP"],
+    "Web Development": ["HTML", "CSS", "JavaScript"],
+    "Database Management": ["SQL", "MySQL", "Oracle"],
+    "Networking": ["Cisco Packet Tracer", "Network Configuration", "Cable Management"],
+    "System Administration": ["IT Infrastructure Support", "System Troubleshooting"],
+    "Other": ["Microsoft Office", "Technical Documentation", "Team Leadership"],
 };
+
+const categoryIcons: Record<string, React.ReactNode> = {
+    "Programming Languages": <Code className="h-6 w-6 text-primary" />,
+    "Web Development": <Code className="h-6 w-6 text-primary" />,
+    "Database Management": <Database className="h-6 w-6 text-primary" />,
+    "Networking": <Server className="h-6 w-6 text-primary" />,
+    "System Administration": <Server className="h-6 w-6 text-primary" />,
+    "Other": <Star className="h-6 w-6 text-primary" />,
+};
+
 
 const Skills: FC<SkillsProps> = ({ skills }) => {
   return (
@@ -29,19 +36,25 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Technical Skills</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Here's a look at my technical proficiency, highlighting key areas of my expertise based on my experience and projects.
+              A breakdown of my technical skills, categorized by area of expertise.
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3">
-          {skills.map((skill, index) => (
-            <div key={index} className="grid gap-2">
-              <h3 className="text-lg font-bold font-headline">{skill.skill}</h3>
-              <div className="flex items-center gap-2">
-                <Progress value={proficiencyToValue(skill.proficiency)} className="w-full h-3" />
-                <span className="text-sm font-medium text-muted-foreground">{skill.proficiency}</span>
-              </div>
-            </div>
+        <div className="mx-auto grid max-w-5xl gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
+          {Object.entries(skillsByCategory).map(([category, skillsList]) => (
+            <Card key={category} className="transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                {categoryIcons[category]}
+                <CardTitle className="font-headline text-lg">{category}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-none space-y-1 pt-4">
+                  {skillsList.map((skill, index) => (
+                    <li key={index} className="text-muted-foreground">{skill}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
