@@ -10,15 +10,15 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ name }) => {
   return (
-    <section className="w-full pt-32 pb-12 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 bg-card">
+    <section className="w-full pt-32 pb-12 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 bg-gradient-to-br from-card to-background">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-          <div className="flex flex-col justify-center space-y-4">
+          <div className="flex flex-col justify-center space-y-4 animate-fade-in-up">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline">
                 {name}
               </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+              <p className="max-w-[600px] text-muted-foreground md:text-xl animate-fade-in-up animation-delay-200">
                 A highly motivated Computer Science graduate with a passion for building innovative solutions.
               </p>
             </div>
@@ -36,7 +36,7 @@ const Hero: FC<HeroProps> = ({ name }) => {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center animate-fade-in animation-delay-600">
             <Image
               src="/bn.jpg"
               alt="Blen Kassahun Nigatu"
