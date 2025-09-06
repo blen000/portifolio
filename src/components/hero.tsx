@@ -22,7 +22,7 @@ const Hero: FC<HeroProps> = ({ name }) => {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex">
+              <Link href="/BK_CV2.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex">
                 <Button>
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume
