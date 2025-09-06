@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = ({ name }) => {
           </div>
           <div className="flex items-center justify-center">
             <Image
-              src="https://picsum.photos/600/600"
+              src="/bn.jpg"
               alt="Blen Kassahun Nigatu"
               width={400}
               height={400}
