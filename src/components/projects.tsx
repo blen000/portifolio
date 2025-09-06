@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { Code, ExternalLink, MoreVertical } from "lucide-react";
+import { Code, ExternalLink, QrCode } from "lucide-react";
 
 interface Project {
   title: string;
@@ -45,7 +45,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon" className="ml-4 flex-shrink-0">
-                        <MoreVertical className="h-4 w-4" />
+                        <QrCode className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
