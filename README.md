@@ -20,7 +20,7 @@ It serves as a digital resume and personal brand, helping potential clients and 
 - **Framework:** Next.js (React + TypeScript)  
 - **Styling:** Tailwind CSS  
 - **Deployment:** Vercel  
-- **Other Tools:** GitHub Pages / Firebase *(if used)*  
+- **Other Tools:** GitHub Page
 
 ---
 
