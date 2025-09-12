@@ -24,6 +24,11 @@ It serves as a digital resume and personal brand, helping potential clients and 
 
 ---
 
+## 📸 Screenshots
+![Screenshot](/screenshot/hero.jpg)
+
+---
+
 ## 🔗 Live Demo
 👉 [View Portfolio]((https://portifolio-qumnqh253-blen000s-projects.vercel.app))  
 
