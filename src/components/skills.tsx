@@ -3,16 +3,17 @@
 import type { FC } from "react";
 import type { HighlightSkillsOutput } from "@/ai/flows/skills-highlighting";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, Server, Star } from "lucide-react";
+import { Code, Database, Server, Star, Activity } from "lucide-react";
 
 interface SkillsProps {
   skills: HighlightSkillsOutput;
 }
 
 const skillsByCategory: Record<string, string[]> = {
-    "Programming Languages": ["C++", "Java", "JavaScript", "PHP"],
-    "Web Development": ["HTML", "CSS", "JavaScript"],
-    "Database Management": ["SQL", "MySQL", "Oracle"],
+    "Programming Languages": ["C#", "C++", "JavaScript", "PHP"],
+    "Web Development": ["React", "Next.js", "Tailwind", "HTML", "CSS", "JavaScript"],
+    "Database Management": ["Postgres", "SQL", "MySQL", "Oracle"],
+    "Monitoring & Logging": ["Grafana", "Promtail", "Prometheus", "Loki"],
     "Networking": ["Cisco Packet Tracer", "Network Configuration", "Cable Management"],
     "System Administration": ["IT Infrastructure Support", "System Troubleshooting"],
     "Other": ["Microsoft Office", "Technical Documentation", "Team Leadership"],
@@ -24,6 +25,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
     "Database Management": <Database className="h-6 w-6 text-primary" />,
     "Networking": <Server className="h-6 w-6 text-primary" />,
     "System Administration": <Server className="h-6 w-6 text-primary" />,
+    "Monitoring & Logging": <Activity className="h-6 w-6 text-primary" />, // or use a monitoring icon if available
     "Other": <Star className="h-6 w-6 text-primary" />,
 };
 
