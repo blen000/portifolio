@@ -25,7 +25,7 @@ It serves as a digital resume and personal brand, helping potential clients and 
 ---
 
 ## 📸 Screenshots
-![Screenshot](public/Screenshot/hero.jpg)
+![Screenshot](Public/Screenshot/hero.jpg)
 ![Screenshot](Public/Screenshot/2nd.jpg)
 ![Screenshot](Public/Screenshot/3rd.jpg)
 ![Screenshot](Public/Screenshot/4th.jpg)
