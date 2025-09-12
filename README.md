@@ -32,6 +32,7 @@ It serves as a digital resume and personal brand, helping potential clients and 
 ![Screenshot](Public/Screenshot/5th.jpg)
 ![Screenshot](Public/Screenshot/6th.jpg)
 ![Screenshot](Public/Screenshot/7th.jpg)
+![Screenshot](Public/Screenshot/8th.jpg)
 
 ---
 
