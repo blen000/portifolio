@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Code2 } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle";
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
         <Code2 className="h-6 w-6 text-primary" />
         <span className="ml-2 font-headline font-semibold">Blen's Portfolio</span>
       </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6">
+      <nav className="ml-auto flex items-center gap-4 sm:gap-6">
         <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
           About
         </Link>
@@ -27,6 +28,7 @@ export default function Header() {
         <Link href="#contact" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
           Contact
         </Link>
+        <ThemeToggle />
       </nav>
     </header>
   );
