@@ -4,7 +4,6 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 import Link from "next/link";
 
 interface HeroProps {
@@ -69,12 +68,6 @@ const Hero: FC<HeroProps> = ({ name }) => {
             transition={{ duration: 0.3, delay: 1 }}
             className="relative z-10 flex flex-col gap-2 min-[400px]:flex-row"
           >
-            <Link href="/BK_CV2.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex">
-              <Button>
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </Button>
-            </Link>
             <Link href="#contact" className="inline-flex">
               <Button variant="outline">
                 Contact Me
