@@ -96,7 +96,7 @@ const resumeData = {
   socials: [
     { name: "Email", url: "mailto:blenkassahun08@gmail.com" },
     { name: "GitHub", url: "https://github.com/blen000" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/blen-kassahun-900415318/" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/blen-kassahun/" },
   ]
 };
 
