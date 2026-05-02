@@ -1,45 +1,58 @@
-
 "use client";
 
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
+
+interface SocialLink {
+  name: string;
+  url: string;
+}
 
 interface HeroProps {
   name: string;
+  role: string;
+  headline: string;
+  specialties: string[];
+  socials: SocialLink[];
 }
 
-const Hero: FC<HeroProps> = ({ name }) => {
-  const tagline = "A highly motivated Computer Science graduate with a passion for building innovative solutions.";
+const socialIconMap: Record<string, typeof Github> = {
+  Email: Mail,
+  GitHub: Github,
+  LinkedIn: Linkedin,
+};
 
+const Hero: FC<HeroProps> = ({ name, role, headline, specialties, socials }) => {
   return (
-    <section className="relative w-full pt-32 pb-12 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 overflow-hidden">
-       <div
-        className="absolute inset-y-0 left-0 h-full w-px bg-border/80">
-        <div
-          className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-primary to-transparent" />
+    <section className="relative w-full overflow-hidden pt-32 pb-12 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32">
+      <div className="absolute inset-y-0 left-0 h-full w-px bg-border/80">
+        <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-primary to-transparent" />
       </div>
-      <div
-        className="absolute inset-y-0 right-0 h-full w-px bg-border/80">
-        <div
-          className="absolute h-40 w-px bg-gradient-to-b from-transparent via-primary to-transparent" />
+      <div className="absolute inset-y-0 right-0 h-full w-px bg-border/80">
+        <div className="absolute h-40 w-px bg-gradient-to-b from-transparent via-primary to-transparent" />
       </div>
-      <div
-        className="absolute inset-x-0 bottom-0 h-px w-full bg-border/80">
-        <div
-          className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-primary to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px w-full bg-border/80">
+        <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-primary to-transparent" />
       </div>
 
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1
-              className="relative z-10 mx-auto max-w-4xl text-center text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline"
-            >
-              {name.split(" ").map((word, index) => (
+        <div className="flex flex-col items-center space-y-6 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="text-sm font-semibold uppercase tracking-[0.2em] text-primary"
+          >
+            {role}
+          </motion.p>
+          <div className="space-y-4">
+            <h1 className="relative z-10 mx-auto flex max-w-4xl flex-wrap justify-center gap-x-3 gap-y-1 text-center text-3xl font-bold tracking-normal sm:gap-x-4 sm:text-5xl xl:text-6xl/none font-headline">
+              {name.trim().split(/\s+/).filter(Boolean).map((word, index) => (
                 <motion.span
-                  key={index}
+                  key={`${word}-${index}`}
                   initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
                   animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                   transition={{
@@ -47,7 +60,7 @@ const Hero: FC<HeroProps> = ({ name }) => {
                     delay: index * 0.1,
                     ease: "easeInOut",
                   }}
-                  className="mr-2 inline-block"
+                  className="inline-block whitespace-nowrap"
                 >
                   {word}
                 </motion.span>
@@ -56,23 +69,68 @@ const Hero: FC<HeroProps> = ({ name }) => {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.8 }}
-              className="relative z-10 mx-auto max-w-[700px] text-muted-foreground md:text-xl"
+              transition={{ duration: 0.35, delay: 0.25 }}
+              className="relative z-10 mx-auto max-w-[720px] text-lg font-medium text-foreground md:text-xl"
             >
-              {tagline}
+              {headline}
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.35, delay: 0.45 }}
+              className="mx-auto max-w-xl space-y-3 text-muted-foreground"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wider text-foreground">Focus</p>
+              <ul className="mx-auto flex max-w-lg flex-col gap-2 text-left text-base md:text-lg">
+                {specialties.map((item) => (
+                  <li key={item} className="flex gap-2 leading-snug">
+                    <span className="font-semibold text-primary" aria-hidden>
+                      •
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 1 }}
-            className="relative z-10 flex flex-col gap-2 min-[400px]:flex-row"
+            transition={{ duration: 0.35, delay: 0.65 }}
+            className="relative z-10 flex flex-col items-center gap-4 min-[480px]:flex-row min-[480px]:justify-center"
           >
-            <Link href="#contact" className="inline-flex">
-              <Button variant="outline">
-                Contact Me
-              </Button>
+            <Link href="#projects" prefetch={false} className="inline-flex">
+              <Button variant="default">View projects</Button>
             </Link>
+            <Link href="#contact" prefetch={false} className="inline-flex">
+              <Button variant="outline">Contact</Button>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, delay: 0.85 }}
+            className="flex flex-wrap items-center justify-center gap-3 pt-2"
+            aria-label="Professional profiles"
+          >
+            {socials.map((social) => {
+              const Icon = socialIconMap[social.name];
+              const isMail = social.url.startsWith("mailto:");
+              return (
+                <Link
+                  key={social.name}
+                  href={social.url}
+                  prefetch={false}
+                  target={isMail ? undefined : "_blank"}
+                  rel={isMail ? undefined : "noopener noreferrer"}
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition hover:border-primary/50 hover:text-foreground"
+                >
+                  {Icon ? <Icon className="h-4 w-4" aria-hidden /> : null}
+                  {social.name}
+                </Link>
+              );
+            })}
           </motion.div>
         </div>
       </div>

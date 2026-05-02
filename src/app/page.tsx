@@ -9,6 +9,9 @@ import Footer from "@/components/footer";
 import WorkExperience from "@/components/work-experience";
 import Education from "@/components/education";
 import Certifications from "@/components/certifications";
+import { caseStudies } from "@/data/case-studies";
+import { engineerMindsetBullets } from "@/data/engineer-mindset";
+import { portfolioCoreStrengths } from "@/data/core-strengths";
 
 const resumeData = {
   name: "Blen Kassahun Nigatu",
@@ -16,50 +19,25 @@ const resumeData = {
   email: "blenkassahun08@gmail.com",
   phone: "+251908279572",
   professionalSummary:
-    "A highly motivated and accomplished Computer Science graduate with a BSc from Dilla University, achieving a GPA of 3.92. Proficient in various programming languages, network administration, and system maintenance. Demonstrates strong technical skills, communication abilities, decision-making, and time-management. Awarded a gold medal for academic excellence in the College of Engineering and Technology.",
+    "Full-stack engineer focused on secure internal tooling, admin surfaces, and workflow automation across regulated environments. Holds a BSc in Computer Science from Dilla University (GPA 3.92), combining strong fundamentals with pragmatic delivery habits from banking and SaaS internships.",
   technicalSkills:
     "Programming Languages: C++, Java, JavaScript, PHP. Web Development: HTML, CSS, JavaScript. Database Management: SQL, MySQL, Oracle. Networking: Cisco Packet Tracer, Network Configuration, Cable Management. System Administration: IT Infrastructure Support, System Troubleshooting. Other: Microsoft Office, Technical Documentation, Team Leadership.",
-  workExperience: `Graduate IT Trainee at NIB International Bank (March 2025 – Present): Participating in the design, development, and testing of internal banking applications. Collaborating with the development team to write clean, maintainable, and scalable code. Supporting the enhancement and maintenance of existing software systems used in banking operations. Engaging in code reviews, debugging sessions, and documentation tasks.
+  workExperience: `Graduate IT Trainee at NIB International Bank (March 2025 – Present): Contributing to the design and development of internal banking systems. Implementing backend features and improving system reliability. Participating in code reviews, debugging, and production issue resolution.
   Software Developer Intern at Acacia Technologies (Jan 2025 – March 2025): Assisting in the development and optimization of software solutions. Engaging in troubleshooting and debugging software applications. Collaborating with team members on IT infrastructure-related tasks.
   Network System Administration Intern at Omo Bank (June 2023 – Aug 2023): Assisted in network installation and system maintenance. Managed network cables and troubleshot IT equipment.`,
-  projects: `Electricity Billing System – Developed using HTML, CSS, JavaScript, and Oracle.
-  Gedeu'ffa - Amharic Bidirectional Translator – A language translation project designed for efficient bidirectional translations.`,
-  projectsData: [
-    {
-      title: "Electricity Billing System",
-      description: "A comprehensive system for managing electricity billing, developed using HTML, CSS, JavaScript, and Oracle.",
-      repoUrl: "https://github.com/blen000",
-      liveUrl: "#",
-    },
-    {
-      title: "Gedeu'ffa - Amharic Bidirectional Translator",
-      description: "A language translation project designed for efficient bidirectional translations between Amharic and Gedeu'ffa.",
-      repoUrl: "https://github.com/blen000",
-      liveUrl: "#",
-    },
-    {
-      title: "Smart Menu – QR Code–Based Digital Menu System",
-      description: "Designed and developed a digital menu platform for hotels and restaurants, enabling guests to access menus instantly by scanning a QR code. Built an intuitive admin panel for secure menu management and real-time updates without requiring reprinting. Used Next.js/React, Tailwind CSS, Prisma, and MySQL.",
-      repoUrl: "https://github.com/blen000",
-      liveUrl: "#",
-    },
-    {
-      title: "Student_registration_system",
-      description: "A student registration system developed using Next.js/React, Tailwind CSS, Prisma, and MySQL.",
-      repoUrl: "https://github.com/blen000",
-      liveUrl: "#",
-    }
-  ],
+  projects: `Adaptive Audit Management Platform – Enterprise audit workflows with RBAC, findings, immutable trails, integrations, reporting.
+Unified Event Ticketing Platform – High-concurrency ticketing, Stripe-ready payments, Redis locks, QR validation, admin dashboards.
+Enterprise Learning Platform – Tenant-scoped LMS with courses, live sessions, certificates, SES email, JWT session patterns.
+Supporting builds: Electricity Billing stack; Gedeu'ffa bilingual translator tooling; QR menu + student registration systems using Next.js, Prisma, MySQL.`,
   workExperienceList: [
     {
       title: "Graduate IT Trainee",
       company: "NIB International Bank",
       period: "March 2025 – Present",
       responsibilities: [
-        "Participating in the design, development, and testing of internal banking applications.",
-        "Collaborating with the development team to write clean, maintainable, and scalable code.",
-        "Supporting the enhancement and maintenance of existing software systems used in banking operations.",
-        "Engaging in code reviews, debugging sessions, and documentation tasks.",
+        "Contributing to the design and development of internal banking systems.",
+        "Implementing backend features and improving system reliability.",
+        "Participating in code reviews, debugging, and production issue resolution.",
       ],
     },
     {
@@ -94,22 +72,31 @@ const resumeData = {
     { title: "Professional Development Training", issuer: "Dereja Academy" },
   ],
   additionalSkills: [
-    "Served as a team leader in multiple academic and project-based collaborations.",
-    "Strong interpersonal and decision-making skills.",
-    "Passionate about learning, innovation, and problem-solving.",
-    "Fluent in Amharic and Advanced in English.",
+    "Led cross-functional cohorts inside academic labs and sprint-style delivery forums.",
+    "Comfortable bridging ops feedback with engineering tradeoffs.",
+    "Amharic fluent · English proficient.",
+    "Continuously sharpening auth patterns, Postgres performance, and platform observability tactics.",
   ],
   socials: [
     { name: "Email", url: "mailto:blenkassahun08@gmail.com" },
     { name: "GitHub", url: "https://github.com/blen000" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/blen-kassahun/" },
-  ]
+  ],
+  heroRole: "Full-Stack Developer",
+  heroHeadline:
+    "I build full-stack systems where access control, data integrity, and performance under load matter—focused on admin tools, workflows, and APIs.",
+  heroSpecialties: [
+    "Role-Based Access Control (RBAC)",
+    "Admin Dashboards & Internal Tools",
+    "Workflow Automation & Background Jobs",
+    "Secure, Scalable Backend Systems",
+  ],
 };
 
 export default async function Home() {
   let highlightedSkills: HighlightSkillsOutput;
 
-  if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'YOUR_API_KEY_HERE') {
+  if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== "YOUR_API_KEY_HERE") {
     const skillsInput: HighlightSkillsInput = {
       professionalSummary: resumeData.professionalSummary,
       technicalSkills: resumeData.technicalSkills,
@@ -118,29 +105,35 @@ export default async function Home() {
     };
     highlightedSkills = await highlightSkills(skillsInput);
   } else {
-    // Fallback if API key is not set
-    const skillsList = resumeData.technicalSkills.split('.').flatMap(s => s.split(',')).map(sk => sk.trim()).filter(Boolean);
-    highlightedSkills = skillsList.map(skill => ({
-      skill: skill.replace(/:(.*)/, '').trim(),
-      proficiency: 'Intermediate',
+    const skillsList = resumeData.technicalSkills.split(".").flatMap((s) => s.split(",")).map((sk) => sk.trim()).filter(Boolean);
+    highlightedSkills = skillsList.map((skill) => ({
+      skill: skill.replace(/:(.*)/, "").trim(),
+      proficiency: "Intermediate",
     }));
   }
 
+  const brandShort = resumeData.name.split(" ")[0];
 
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-background">
-      <Header />
+    <div className="flex min-h-[100dvh] flex-col bg-background">
+      <Header socials={resumeData.socials} brand={`${brandShort}'s Portfolio`} />
       <main className="flex-1">
-        <Hero name={resumeData.name} />
+        <Hero
+          name={resumeData.name}
+          role={resumeData.heroRole}
+          headline={resumeData.heroHeadline}
+          specialties={resumeData.heroSpecialties}
+          socials={resumeData.socials}
+        />
         <About summary={resumeData.professionalSummary} additionalSkills={resumeData.additionalSkills} />
         <WorkExperience experiences={resumeData.workExperienceList} />
         <Education education={resumeData.education} />
         <Skills skills={highlightedSkills} />
-        <Projects projects={resumeData.projectsData} />
+        <Projects projects={caseStudies} engineerMindsetBullets={engineerMindsetBullets} coreStrengths={portfolioCoreStrengths} />
         <Certifications certifications={resumeData.certifications} />
         <Contact socials={resumeData.socials} />
       </main>
-      <Footer name={resumeData.name} />
+      <Footer name={resumeData.name} socials={resumeData.socials} />
     </div>
   );
 }

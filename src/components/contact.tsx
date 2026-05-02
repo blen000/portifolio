@@ -33,7 +33,12 @@ const Contact: FC<ContactProps> = ({ socials }) => {
             {socials.map((social) => {
                const Icon = iconMap[social.name];
                return (
-                <Link href={social.url} key={social.name} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={social.url}
+                  key={social.name}
+                  target={social.url.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={social.url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                >
                   <Button variant="outline">
                     {Icon && <Icon className="h-4 w-4 mr-2" />}
                     {social.name}
