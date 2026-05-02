@@ -19,7 +19,7 @@ const resumeData = {
   email: "blenkassahun08@gmail.com",
   phone: "+251908279572",
   professionalSummary:
-    "Full-stack engineer focused on secure internal tooling, admin surfaces, and workflow automation across regulated environments. Holds a BSc in Computer Science from Dilla University (GPA 3.92), combining strong fundamentals with pragmatic delivery habits from banking and SaaS internships.",
+    "Full-stack engineer building secure internal tooling, admin surfaces, and workflow automation for regulated environments. BSc in Computer Science from Dilla University (GPA 3.92) with practical delivery experience in banking and SaaS contexts.",
   technicalSkills:
     "Programming Languages: C++, Java, JavaScript, PHP. Web Development: HTML, CSS, JavaScript. Database Management: SQL, MySQL, Oracle. Networking: Cisco Packet Tracer, Network Configuration, Cable Management. System Administration: IT Infrastructure Support, System Troubleshooting. Other: Microsoft Office, Technical Documentation, Team Leadership.",
   workExperience: `Graduate IT Trainee at NIB International Bank (March 2025 – Present): Contributing to the design and development of internal banking systems. Implementing backend features and improving system reliability. Participating in code reviews, debugging, and production issue resolution.
@@ -32,31 +32,32 @@ Supporting builds: Electricity Billing stack; Gedeu'ffa bilingual translator too
   workExperienceList: [
     {
       title: "Graduate IT Trainee",
-      company: "NIB International Bank",
+      company: "National banking technology team",
       period: "March 2025 – Present",
       responsibilities: [
-        "Contributing to the design and development of internal banking systems.",
-        "Implementing backend features and improving system reliability.",
-        "Participating in code reviews, debugging, and production issue resolution.",
+        "Designed and delivered internal banking workflows and operational tooling.",
+        "Built backend services and reliability improvements for production operations.",
+        "Led code reviews, root-cause debugging, and incident remediation.",
       ],
     },
     {
       title: "Software Developer Intern",
-      company: "Acacia Technologies",
+      company: "Technology services group",
       period: "Jan 2025 – March 2025",
       responsibilities: [
-        "Assisting in the development and optimization of software solutions.",
-        "Engaging in troubleshooting and debugging software applications.",
-        "Collaborating with team members on IT infrastructure-related tasks.",
+        "Built and optimized web application features for operational users.",
+        "Resolved bugs and improved development and release workflows.",
+        "Collaborated on sprint planning, QA handoff, and deployment readiness.",
       ],
     },
     {
       title: "Network System Administration Intern",
-      company: "Omo Bank",
+      company: "Financial operations network team",
       period: "June 2023 – Aug 2023",
       responsibilities: [
-        "Assisted in network installation and system maintenance.",
-        "Managed network cables and troubleshot IT equipment.",
+        "Deployed and maintained network equipment for branch operations.",
+        "Structured cable and access configurations to improve uptime.",
+        "Troubleshot infrastructure issues and verified system stability.",
       ],
     },
   ],
@@ -84,12 +85,12 @@ Supporting builds: Electricity Billing stack; Gedeu'ffa bilingual translator too
   ],
   heroRole: "Full-Stack Developer",
   heroHeadline:
-    "I build full-stack systems where access control, data integrity, and performance under load matter—focused on admin tools, workflows, and APIs.",
+    "I deliver secure full-stack systems for admin tools, workflows, and APIs in regulated environments.",
   heroSpecialties: [
     "Role-Based Access Control (RBAC)",
-    "Admin Dashboards & Internal Tools",
-    "Workflow Automation & Background Jobs",
-    "Secure, Scalable Backend Systems",
+    "Internal admin dashboards & workflows",
+    "Workflow automation & background jobs",
+    "Secure, scalable backend systems",
   ],
 };
 

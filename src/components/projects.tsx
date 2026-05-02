@@ -21,14 +21,14 @@ const Projects: FC<ProjectsProps> = ({ projects, engineerMindsetBullets, coreStr
         <header className="mx-auto max-w-2xl pb-10 pt-14 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h2>
           <p className="mt-3 text-sm text-muted-foreground md:text-base">
-            Internal-grade systems generalized for portfolio use—impact, constraints, and stack at a glance.
+            These projects reflect production-style systems built with real-world constraints: security, concurrency, and operational reliability.
           </p>
         </header>
 
         {/* Quick scan — recruiter-first */}
         <div className="mb-12 rounded-xl border bg-card px-5 py-7 shadow-sm md:px-8 md:py-9">
           <h3 className="text-center font-headline text-xl font-bold tracking-tight sm:text-2xl">Quick Overview</h3>
-          <p className="mt-2 text-center text-sm text-muted-foreground">Tap a card to jump to the write-up and preview.</p>
+          <p className="mt-2 text-center text-sm text-muted-foreground">Click a card to jump to the case study and preview.</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {projects.map((p) => (
               <Link
@@ -69,7 +69,7 @@ const Projects: FC<ProjectsProps> = ({ projects, engineerMindsetBullets, coreStr
                         <Button variant="outline" size="sm" asChild>
                           <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="mr-2 h-4 w-4" aria-hidden />
-                            Code
+                            View Code (Demo Repo)
                           </Link>
                         </Button>
                       ) : null}

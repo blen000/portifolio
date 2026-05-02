@@ -29,7 +29,7 @@ export const ProjectScreenshot: FC<ProjectScreenshotProps> = ({ slug, alt }) => 
         unoptimized
       />
       <figcaption className="border-t bg-muted/20 px-3 py-2 text-center text-xs text-muted-foreground">
-        Portfolio preview · sanitized / demo visuals
+        Preview (demo data, no sensitive info)
       </figcaption>
     </figure>
   );

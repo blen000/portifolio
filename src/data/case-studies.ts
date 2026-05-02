@@ -26,7 +26,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Adaptive Audit Management Platform",
     overviewBadge: "Audit Platform",
     overviewSummary: "Audit workflows, approvals, and compliance tracking",
-    screenshotAlt: "Stylized audit admin dashboard screenshot with charts and missions list — demo data",
+    screenshotAlt: "Audit admin dashboard preview with charts and mission list — demo data",
     whatItIs:
       "A workflow platform for audit missions, evidence, and sign-offs with a full tamper-evident history. Built for teams that need consistent process and defensible records—not ad-hoc spreadsheets.",
     highlights: [
@@ -47,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Unified Event Ticketing Platform",
     overviewBadge: "Event Ticketing",
     overviewSummary: "Payments, inventory, and QR-based validation",
-    screenshotAlt: "Stylized event ticketing dashboard with sales charts and QR check-in preview — demo data",
+    screenshotAlt: "Event ticketing dashboard preview with sales charts and QR check-in — demo data",
     whatItIs:
       "A full-stack ticketing product: catalog, checkout, inventory, staff tools, and entry validation. Optimistic for peak sales; conservative where money and inventory must agree.",
     highlights: [
@@ -68,7 +68,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Enterprise Learning & Training Platform",
     overviewBadge: "Training Platform",
     overviewSummary: "Multi-tenant LMS with tracking and reporting",
-    screenshotAlt: "Stylized learning platform dashboard with course cards and progress — demo data",
+    screenshotAlt: "Learning platform dashboard preview with course cards and progress — demo data",
     whatItIs:
       "A provider-scoped learning system for self-paced and instructor-led training, progress, purchases, and leadership reporting—without mixing tenant data.",
     highlights: [
