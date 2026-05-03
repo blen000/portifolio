@@ -20,7 +20,7 @@ const iconMap: Record<string, typeof Github> = {
 
 const Footer: FC<FooterProps> = ({ name, socials }) => {
   return (
-    <footer className="flex w-full shrink-0 flex-col items-center justify-center gap-4 border-t bg-card px-4 py-8 md:px-6 sm:flex-row sm:justify-between">
+    <footer className="flex w-full shrink-0 flex-col items-center justify-center gap-4 border-t border-primary/20 bg-card/95 bg-gradient-to-br from-secondary/40 via-card to-secondary/25 px-4 py-10 md:px-6 sm:flex-row sm:justify-between">
       <div className="flex flex-wrap items-center justify-center gap-3">
         {socials.map((social) => {
           const Icon = iconMap[social.name];

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Sparkles } from "lucide-react";
+import { Hexagon } from "lucide-react";
 
 interface AboutProps {
   summary: string;
@@ -9,7 +9,8 @@ interface AboutProps {
 
 const About: FC<AboutProps> = ({ summary, additionalSkills }) => {
   return (
-    <section id="about" className="w-full bg-background">
+    <section id="about" className="relative w-full overflow-hidden bg-background">
+      <div className="pointer-events-none absolute right-[-20%] top-1/2 h-[min(420px,50vw)] w-[min(420px,50vw)] -translate-y-1/2 rounded-full bg-primary/5 blur-3xl dark:bg-primary/10" aria-hidden />
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-4">
@@ -18,10 +19,10 @@ const About: FC<AboutProps> = ({ summary, additionalSkills }) => {
               {summary}
             </p>
           </div>
-          <div className="flex items-center justify-center">
-             <Card className="w-full">
+          <div className="relative flex items-center justify-center">
+             <Card className="w-full border-primary/15 shadow-sm ring-1 ring-primary/10">
               <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
-                <Sparkles className="h-8 w-8 text-primary" />
+                <Hexagon className="h-8 w-8 text-primary" aria-hidden />
                 <CardTitle className="font-headline text-2xl">Leadership & Additional Skills</CardTitle>
               </CardHeader>
               <CardContent className="pt-4">

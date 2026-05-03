@@ -32,8 +32,9 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 const Skills: FC<SkillsProps> = ({ skills }) => {
   return (
-    <section id="skills" className="w-full bg-card">
-      <div className="container px-4 md:px-6">
+    <section id="skills" className="relative w-full overflow-hidden bg-card">
+      <div className="pointer-events-none absolute -left-[15%] top-1/4 h-64 w-64 rounded-full bg-amber-400/15 blur-[80px] dark:bg-primary/15" aria-hidden />
+      <div className="relative z-[1] container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Technical Skills</h2>
@@ -44,7 +45,7 @@ const Skills: FC<SkillsProps> = ({ skills }) => {
         </div>
         <div className="mx-auto grid max-w-5xl gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
           {Object.entries(skillsByCategory).map(([category, skillsList]) => (
-            <Card key={category} className="transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <Card key={category} className="border-primary/15 transition-all duration-300 hover:scale-[1.02] hover:border-primary/35 hover:shadow-xl hover:shadow-amber-900/5 dark:hover:shadow-amber-500/10">
               <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
                 {categoryIcons[category]}
                 <CardTitle className="font-headline text-lg">{category}</CardTitle>

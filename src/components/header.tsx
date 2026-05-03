@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Code2, Github, Linkedin, Mail } from "lucide-react";
+import { Hexagon, Github, Linkedin, Mail } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
 interface SocialLink {
@@ -25,13 +26,16 @@ export default function Header({ socials, brand }: HeaderProps) {
     .filter((s): s is SocialLink => Boolean(s));
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 flex h-16 items-center bg-background/80 px-4 shadow-sm backdrop-blur-sm lg:px-6">
-      <Link href="#" className="flex items-center justify-center" prefetch={false}>
-        <Code2 className="h-6 w-6 text-primary" />
-        <span className="ml-2 font-headline font-semibold">{brand}</span>
+    <header className="fixed left-0 right-0 top-0 z-50 flex h-16 items-center border-b border-primary/15 bg-background/85 px-4 shadow-[0_1px_0_hsl(38_92%_47%_/_0.08)] backdrop-blur-md dark:shadow-[0_1px_0_hsl(43_93%_50%_/_0.12)] lg:px-6">
+      <Link href="#" className="group flex items-center justify-center gap-2" prefetch={false}>
+        <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 ring-2 ring-primary/25 transition group-hover:bg-primary/15 dark:bg-primary/15 dark:ring-primary/35">
+          <Image src="/favicon.ico" alt="" width={28} height={28} className="h-7 w-7 rounded-md object-contain" unoptimized priority />
+        </span>
+        <Hexagon className="hidden h-5 w-5 text-primary/80 sm:block" aria-hidden />
+        <span className="font-headline font-semibold tracking-tight text-foreground">{brand}</span>
       </Link>
       <nav className="ml-auto flex items-center gap-3 sm:gap-6">
-        <div className="hidden items-center gap-1 rounded-full border border-border/70 bg-muted/40 px-1 py-1 sm:flex">
+        <div className="hidden items-center gap-1 rounded-full border border-primary/20 bg-secondary/60 px-1 py-1 sm:flex">
           {compactLinks.map((social) => {
             const Icon = compactIconMap[social.name];
             const isMail = social.url.startsWith("mailto:");

@@ -116,7 +116,8 @@ export default async function Home() {
   const brandShort = resumeData.name.split(" ")[0];
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-background">
+    <div className="relative flex min-h-[100dvh] flex-col overflow-x-hidden bg-background">
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-pattern-honeycomb opacity-[0.45] dark:opacity-[0.35]" aria-hidden />
       <Header socials={resumeData.socials} brand={`${brandShort}'s Portfolio`} />
       <main className="flex-1">
         <Hero

@@ -6,6 +6,11 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: "Blen's Portfolio",
   description: 'A modern and professional portfolio for Blen Kassahun Nigatu.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

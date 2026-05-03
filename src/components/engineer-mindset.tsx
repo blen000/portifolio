@@ -7,7 +7,7 @@ interface EngineerMindsetProps {
 const EngineerMindset: FC<EngineerMindsetProps> = ({ bullets }) => {
   return (
     <section id="how-i-think" className="mb-12 scroll-mt-28">
-      <div className="rounded-xl border bg-card px-5 py-6 shadow-sm md:px-8 md:py-8">
+      <div className="rounded-xl border border-primary/20 bg-card bg-gradient-to-br from-secondary/40 via-card to-transparent px-5 py-6 shadow-sm md:px-8 md:py-8">
         <h2 className="font-headline text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">How I think as an engineer</h2>
         <p className="mt-2 max-w-2xl text-xs text-muted-foreground md:text-sm">
           How I approach internal, high-stakes products—readable in a few seconds.

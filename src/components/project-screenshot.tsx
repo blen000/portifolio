@@ -11,14 +11,20 @@ interface ProjectScreenshotProps {
   slug: string;
   /** Accessible description of what the screenshot represents */
   alt: string;
+  figureClassName?: string;
 }
 
-export const ProjectScreenshot: FC<ProjectScreenshotProps> = ({ slug, alt }) => {
+export const ProjectScreenshot: FC<ProjectScreenshotProps> = ({ slug, alt, figureClassName }) => {
   const src = SHOT_SRC[slug];
   if (!src) return null;
 
   return (
-    <figure className="overflow-hidden rounded-lg border bg-muted/30 shadow-inner">
+    <figure
+      className={
+        figureClassName ??
+        "overflow-hidden rounded-lg border border-primary/15 bg-muted/30 shadow-inner"
+      }
+    >
       <Image
         src={src}
         alt={alt}
